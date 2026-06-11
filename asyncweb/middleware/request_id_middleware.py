@@ -1,4 +1,5 @@
 import logging
+import uuid
 
 from asyncweb.core.request import Request
 from asyncweb.core.response import Response
@@ -16,7 +17,6 @@ class RequestIDMiddleware(BaseMiddleware):
     async def __call__(
         self, request: Request, next_handler: NextHandler
     ) -> Response:
-        import uuid
         request_id = request.get_header("x-request-id") or str(uuid.uuid4())
         response = await next_handler(request)
         response.headers["X-Request-ID"] = request_id

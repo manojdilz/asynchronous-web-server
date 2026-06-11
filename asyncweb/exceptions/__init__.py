@@ -15,6 +15,6 @@ __all__ = [
     "HTTPException",
     "BadRequestException",
     "InternalServerError",
-    "method_not_allowed_exception",
+    "MethodNotAllowedException",
     "NotFoundException",
 ]

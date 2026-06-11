@@ -3,6 +3,8 @@ import logging
 from asyncweb.core.request import Request
 from asyncweb.core.response import Response
 from asyncweb.middleware.base_middleware import BaseMiddleware, NextHandler
+from asyncweb.core.response import Response
+
 
 logger = logging.getLogger(__name__)
 
@@ -30,8 +32,7 @@ class CORSMiddleware(BaseMiddleware):
     ) -> Response:
         # Handle CORS preflight
         if request.method == "OPTIONS":
-            from asyncweb.core.response import Response as R
-            return R(
+            return Response(
                 status_code=204,
                 headers=self._cors_headers(),
             )

@@ -1,4 +1,4 @@
-from asyncweb.exceptions.HTTPException import HTTPException
+from asyncweb.exceptions.http_exception import HTTPException
 
 
 class NotFoundException(HTTPException):

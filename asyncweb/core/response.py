@@ -94,7 +94,8 @@ class ResponseFactory:
         extra_headers: dict[str, str] | None = None,
     ) -> Response:
         """Return a JSON-encoded response."""
-        body = json.dumps(data, ensure_ascii=False, default=str).encode("utf-8")
+        body = json.dumps(data, ensure_ascii=False,
+                          default=str).encode("utf-8")
         headers = {"Content-Type": cls._JSON_CONTENT_TYPE}
         if extra_headers:
             headers.update(extra_headers)

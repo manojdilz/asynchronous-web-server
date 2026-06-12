@@ -14,14 +14,9 @@ SOLID:
 from __future__ import annotations
 
 import re
-from typing import Awaitable, Callable
+from typing import Callable
 
-from asyncweb.core.request import Request
-from asyncweb.core.response import Response
-from asyncweb.routing.route import Route
-
-# A handler is any async callable: async def handler(req: Request) -> Response
-HandlerType = Callable[[Request], Awaitable[Response]]
+from asyncweb.routing.route import Route, HandlerType
 
 
 class Router:
